@@ -7,7 +7,7 @@
       placeholder="할 일을 입력해주세요"
       @input="sendInputToStore(($event.target as HTMLInputElement).value)"
     />
-    <button class="add-button">
+    <button class="add-button" aria-label="add-button">
       <font-awesome-icon :icon="['fas', 'plus']" />
     </button>
   </form>
