@@ -5,7 +5,7 @@
       type="text"
       class="todo-input"
       placeholder="할 일을 입력해주세요"
-      @input="sendInputToStore($event.target.value)"
+      @input="sendInputToStore(($event.target as HTMLInputElement).value)"
     />
     <button class="add-button">
       <font-awesome-icon :icon="['fas', 'plus']" />
@@ -13,7 +13,7 @@
   </form>
 </template>
 <script setup lang="ts">
-import { useTodoStore } from "@/stores/todo";
+import { useTodoStore } from '@/stores/todo';
 
 const store = useTodoStore();
 
@@ -23,7 +23,7 @@ const sendInputToStore = (value: string) => {
 
 const submitTodo = () => {
   if (store.todoState.todoInput.length === 0) {
-    alert("내용을 입력해주세요");
+    alert('내용을 입력해주세요');
   } else {
     store.addTodo();
   }

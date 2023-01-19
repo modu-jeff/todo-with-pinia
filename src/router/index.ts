@@ -1,24 +1,24 @@
-import { createRouter, createWebHistory } from "vue-router";
-import type { RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
+import type { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
-    path: "/",
-    name: "HomePage",
+    path: '/',
+    name: 'HomePage',
     component: () =>
-      import(/* webpackChunkName: "Home" */ "@/pages/HomePage.vue"),
+      import(/* webpackChunkName: "Home" */ '@/pages/HomePage.vue'),
   },
   {
-    path: "/todo",
-    name: "TodoPage",
+    path: '/todo',
+    name: 'TodoPage',
     component: () =>
-      import(/* webpackChunkName: "TodoPage" */ "@/pages/TodoPage.vue"),
+      import(/* webpackChunkName: "TodoPage" */ '@/pages/TodoPage.vue'),
   },
   {
-    path: "/:catchAll(.*)*",
-    name: "NotFoundPage",
+    path: '/:catchAll(.*)*',
+    name: 'NotFoundPage',
     component: () =>
-      import(/* webpackChunkName: "NotFoundPage" */ "@/pages/NotFoundPage.vue"),
+      import(/* webpackChunkName: "NotFoundPage" */ '@/pages/NotFoundPage.vue'),
   },
 ];
 

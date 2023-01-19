@@ -5,7 +5,7 @@
 </template>
 
 <style>
-@import "@/assets/scss/reset.scss";
+@import '@/assets/scss/reset.scss';
 
 :root {
   background: rgba(0, 0, 0, 0.08);

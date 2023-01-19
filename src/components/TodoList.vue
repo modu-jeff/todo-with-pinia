@@ -10,9 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import TodoListItem from "@/components/TodoListItem.vue";
-import { useTodoStore } from "@/stores/todo";
+import { computed } from 'vue';
+import TodoListItem from '@/components/TodoListItem.vue';
+import { useTodoStore } from '@/stores/todo';
 
 const store = useTodoStore();
 

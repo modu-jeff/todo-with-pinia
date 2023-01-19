@@ -9,7 +9,7 @@
         type="text"
         ref="editInput"
         class="edit-input"
-        @input="store.editChange($event.target.value)"
+        @input="store.editChange(($event.target as HTMLInputElement).value)"
         :placeholder="todo.text"
         :value="store.todoState.editInput"
       />
@@ -45,9 +45,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useTodoStore } from "@/stores/todo";
-import type { TodoItem } from "@/stores/todo.type";
+import { ref } from 'vue';
+import { useTodoStore } from '@/stores/todo';
+import type { TodoItem } from '@/stores/todo.type';
 
 const store = useTodoStore();
 
@@ -64,7 +64,7 @@ const toggleEdit = () => {
 };
 
 const submitEdit = (id: number) => {
-  if (store.todoState.editInput === "") return alert("내용을 입력해주세요");
+  if (store.todoState.editInput === '') return alert('내용을 입력해주세요');
   store.editTodo(id);
   isEdit.value = !isEdit.value;
 };
