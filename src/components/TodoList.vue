@@ -1,9 +1,9 @@
 <template>
   <div class="todo-list-wrapper">
-    <div v-if="todos.length === 0" class="empty-todos">
+    <div v-if="todos.length === 0" class="empty-todos" key="noneTodo">
       해야 할 일을 채워주세요!
     </div>
-    <div v-else>
+    <div v-else key="todoList">
       <TodoListItem v-for="todo in todos" :key="todo.id" :todo="todo" />
     </div>
   </div>
