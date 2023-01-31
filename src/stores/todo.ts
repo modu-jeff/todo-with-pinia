@@ -8,7 +8,7 @@ export const useTodoStore = defineStore('Todo', () => {
     id: todos.value.length + 1,
     todoInput: '',
     editInput: '',
-    todos,
+    todos
   });
 
   const changeField = (payload: string) => {
@@ -24,7 +24,7 @@ export const useTodoStore = defineStore('Todo', () => {
       id: todoState.id,
       text: todoState.todoInput,
       isDone: false,
-      doneAt: null,
+      doneAt: null
     });
     todoState.id++;
     todoState.todoInput = '';
@@ -43,18 +43,18 @@ export const useTodoStore = defineStore('Todo', () => {
             doneAt: `${new Intl.DateTimeFormat('ko-kr', {
               year: '2-digit',
               month: 'numeric',
-              day: 'numeric',
+              day: 'numeric'
             }).format()}(${new Intl.DateTimeFormat('ko-kr', {
-              weekday: 'short',
-            }).format()})에 완료`,
+              weekday: 'short'
+            }).format()})에 완료`
           }
-        : todo,
+        : todo
     );
   }
 
   const editTodo = (payload: number) => {
     todoState.todos = todoState.todos.map((todo) =>
-      todo.id === payload ? { ...todo, text: todoState.editInput } : todo,
+      todo.id === payload ? { ...todo, text: todoState.editInput } : todo
     );
     todoState.editInput = '';
   };
@@ -66,6 +66,6 @@ export const useTodoStore = defineStore('Todo', () => {
     addTodo,
     deleteTodo,
     checkTodo,
-    editTodo,
+    editTodo
   };
 });
